@@ -1,0 +1,31 @@
+{% extends 'orders/layout.html' %}
+
+{% block title %}
+Авторы
+{% endblock %}
+
+{% block content %}
+<h1>Авторы</h1>
+<div class="ordtable">
+<table class="ordersT">
+    <tr class="ordersC">
+      <th>Автор</th>
+        <th>Номер телефона</th>
+        <th>Предметы</th>
+        <th>Номер карты</th>
+        <th>Вуз</th>
+        <th>Курс</th>
+    </tr>
+    {% for el in authors %}
+            <tr>
+                <td class="ordersD"><a href="https://t.me/{{el.username}}">{{el.link}}</a></td>
+                <td class="ordersD">{{el.phone}}</td>
+                <td class="ordersD">{{el.predm}}</td>
+                <td class="ordersD">{{el.card_num}}</td>
+                <td class="ordersD">{{el.vuz}}</td>
+                <td class="ordersD">{{el.step}}</td>
+            </tr>
+        {% endfor %}
+ </table>
+</div>
+{% endblock %}

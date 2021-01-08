@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+   li {
+    line-height: 3;
+   }
+  </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'orders/css/orders.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <aside>
+        <img src="{% static 'orders/img/logo_img.jpg' %}">
+        <span class="logo">Reshalaa</span>
+        <h3>Заказы</h3>
+        <ul>
+            <a href="{% url 'wo' %}"><li><i class="fas fa-clock"></i> Ожидающие</li></a>
+            <a href="{% url 'priceO' %}"><li><i class="fas fa-dollar-sign"></i> Цена</li></a>
+            <a href="{% url 'activeO' %}"><li><i class="fas fa-pencil-alt"></i> Активные</li></a>
+            <a href="{% url 'waitOh' %}"><li><i class="fas fa-keyboard"></i> Проверка</li></a>
+            <a href="{% url 'doneO' %}"><li><i class="fas fa-archive"></i> Выполненные</li></a>
+            <a href="{% url 'dpo' %}"><li><i class="fas fa-dollar-sign"></i> Оплатить работу</li></a>
+            <a href="{% url 'canceledO' %}"><li><i class="fas fa-window-close"></i> Отмененные заказы</li></a>
+            <a href="{% url 'authors' %}"><li><i class="fas fa-user"></i> Авторы</li></a>
+            <a href="{% url 'users' %}"><li><i class="fas fa-user"></i> Заказчики</li></a>
+        </ul>
+    </aside>
+<div class="mainbody">
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'orders/layout.html' %}
+
+{% block title %}
+Отказ от заказа
+{% endblock %}
+
+{% block content %}
+<h1>Отказ от заказа</h1>
+<form method="post">
+    {% csrf_token %}
+    <h3>Вы действительно хотите отказаться от заказа?</h3>
+    <a href="{% url 'wo' %}"><button class="btn btn-success">Отказаться</button></a>
+</form>
+
+{% endblock %}

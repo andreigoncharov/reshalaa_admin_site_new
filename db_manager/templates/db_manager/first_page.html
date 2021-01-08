@@ -1,0 +1,32 @@
+{% extends 'orders/layout.html' %}
+
+{% block title %}
+Общая информация
+{% endblock %}
+
+{% block content %}
+<h1>{{ head_text }}</h1>
+
+<table class="ordersF">
+    <tr class="ordersC">
+      <th>Заказы</th>
+        <th>Количество</th>
+    </tr>
+    <tr>
+        <td class="ordersD">Ожидающие</td>
+        <td class="ordersD">{{ wait }}</td>
+    </tr>
+    <tr>
+        <td class="ordersD">Цена</td>
+        <td class="ordersD">{{ price }}</td>
+    </tr>
+    <tr>
+        <td class="ordersD">Активные</td>
+        <td class="ordersD">{{ active }}</td>
+    </tr>
+    <tr>
+        <td class="ordersD">Проверка</td>
+        <td class="ordersD">{{ prov }}</td>
+    </tr>
+ </table>
+{% endblock %}
